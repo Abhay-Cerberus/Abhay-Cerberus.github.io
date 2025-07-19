@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay-Cerberus | Portfolio</title>
+    <!-- Critical styles to prevent flash -->
+    <style>
+        html, body {
+            background-color: #000 !important;
+            color: #00fff2;
+            visibility: hidden;
+        }
+        .foggy-glass-layer {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+        }
+        .neon-text {
+            color: #00fff2;
+            text-shadow: 0 0 10px #00cccc;
+        }
+    </style>
+    <!-- Preload CSS files -->
+    <link rel="preload" href="css/layout.css" as="style">
+    <link rel="preload" href="css/nav.css" as="style">
+    <link rel="preload" href="css/hero.css" as="style">
+    <link rel="preload" href="css/bento.css" as="style">
+    <link rel="preload" href="css/modal.css" as="style">
+    <link rel="preload" href="css/contact.css" as="style">
+    <!-- Load CSS files -->
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <!-- Make content visible once CSS is loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            document.body.style.visibility = 'visible';
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="neon-text">About</a></li>
+            <li><a href="#skills" class="neon-text">Skills</a></li>
+            <li><a href="#experience" class="neon-text">Experience</a></li>
+            <li><a href="#projects" class="neon-text">Projects</a></li>
+            <li><a href="#certifications" class="neon-text">Certifications</a></li>
+            <li><a href="#contact" class="neon-text">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 class="neon-text">Abhay-Cerberus</h1>
+            <p class="neon-text">AI/ML Engineer | Ai Agent Developer</p>
+            <div class="social-links">
+                <a href="https://www.github.com/Abhay-Cerberus" class="neon-text">GitHub</a>
+                <a href="https://www.linkedin.com/in/abhay-cerberus" class="neon-text">LinkedIn</a>
+                <a href="https://www.kaggle.com/mistercerberus" class="neon-text">Kaggle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="neon-text">About Me</h2>
+        <div class="about-content glass-panel">
+            <p class="neon-text">Hello, I am an AI Agent Developer with hands on projects in Data Scraping, AI Agent development, AI Automation, Data Analysis, Machine Learning.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="neon-text">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 class="neon-text">Languages</h3>
+                <div class="bento-grid"></div>
+            </div>
+            <div class="skill-category">
+                <h3 class="neon-text">Frameworks</h3>
+                <div class="bento-grid"></div>
+            </div>
+            <div class="skill-category">
+                <h3 class="neon-text">Tools</h3>
+                <div class="bento-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="neon-text">Experience</h2>
+        <div class="bento-grid"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="neon-text">Projects</h2>
+        <div class="bento-grid"></div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2 class="neon-text">Certifications</h2>
+        <div class="bento-grid"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="neon-text">Contact Me</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="glass-panel">
+            <div class="form-group">
+                <input type="text" name="name" required placeholder="Your Name" class="neon-input">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" required placeholder="Your Email" class="neon-input">
+            </div>
+            <div class="form-group">
+                <textarea name="message" required placeholder="Your Message" class="neon-input"></textarea>
+            </div>
+            <button type="submit" class="neon-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Modal Template -->
+    <div id="modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal neon-text">&times;</span>
+            <div class="modal-header">
+                <h2 class="neon-text"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-skills">
+                    <h3 class="neon-text">Technologies</h3>
+                    <div class="skills-list"></div>
+                </div>
+                <div class="modal-details">
+                    <h3 class="neon-text">Details</h3>
+                    <div class="details-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Debris Canvas -->
+    <canvas id="debris"></canvas>
+    
+    <!-- Foggy Glass Layer -->
+    <div class="foggy-glass-layer"></div>
+
+    <!-- Scripts -->
+    <script src="animejs/anime.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/svg-animations.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/certifications.js"></script>
+    <script src="js/experience.js"></script>
+</body>
+</html>

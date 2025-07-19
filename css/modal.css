@@ -1,0 +1,79 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    margin: auto;
+    width: 95%;
+    max-width: 1200px; /* Increased from 800px */
+    min-height: 80vh; /* Added minimum height */
+    max-height: 95vh; /* Increased from 90vh */
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Changed from auto to hidden */
+    padding: 2rem 3rem; /* Added more padding */
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-header {
+    margin-bottom: 3rem; /* Increased spacing */
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem; /* Increased gap */
+    height: calc(100% - 6rem); /* Account for header and padding */
+}
+
+.modal-skills {
+    border-right: 1px solid var(--glass-border);
+    padding-right: 2rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-skills {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        padding-right: 0;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+}

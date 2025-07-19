@@ -1,0 +1,50 @@
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.neon-input {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--neon-blue);
+    border-radius: 5px;
+    color: var(--neon-blue);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.neon-input:focus {
+    outline: none;
+    border-color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+textarea.neon-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.neon-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    color: var(--neon-blue);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background: rgba(0, 255, 242, 0.1);
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+}

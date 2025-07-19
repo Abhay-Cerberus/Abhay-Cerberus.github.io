@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator | Portfolio</title>
+    <!-- Critical styles to prevent flash -->
+    <style>
+        html, body {
+            background-color: #000 !important;
+            color: #00fff2;
+            visibility: hidden;
+        }
+        .foggy-glass-layer {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+        }
+        .neon-text {
+            color: #00fff2;
+            text-shadow: 0 0 10px #00cccc;
+        }
+    </style>
+    <!-- Preload CSS files -->
+    <link rel="preload" href="../css/layout.css" as="style">
+    <link rel="preload" href="../css/nav.css" as="style">
+    <link rel="preload" href="../css/bento.css" as="style">
+    <link rel="preload" href="../css/project.css" as="style">
+    <!-- Load CSS files -->
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/bento.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <!-- Make content visible once CSS is loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            document.body.style.visibility = 'visible';
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-brand neon-text">
+            <a href="../index.html" class="neon-text">Home</a>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section id="project-details" class="glass-panel">
+        <h1 class="neon-text">AI Image Generator</h1>
+        
+        <div class="project-content">
+            <div class="project-images">
+                <!-- Add your project images here -->
+                <img src="../assets/GameDataFetcher.jpeg" alt="Project Screenshot 5">
+            </div>
+            
+            <div class="project-info">
+                <h2 class="neon-text">Overview</h2>
+                <p class="neon-text">
+                    A script that scrapes the current game prices from gg.deals by converting game names into URL-compatible formats and extracting price data from official stores and keyshops.
+                </p>
+
+                <h2 class="neon-text">Technologies Used</h2>
+                <div class="project-skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Requests</span>
+                    <span class="skill-tag">BeautifulSoup</span>
+                    <span class="skill-tag">RegEx</span>
+                </div>
+
+                <h2 class="neon-text">Description</h2>
+                <ul class="neon-text">
+                    <li>Uses requests and BeautifulSoup to fetch and parse HTML from a game's gg.deals page.</li>
+                    <li>Transforms game titles (e.g., replacing spaces, colons, and periods) for valid URL endpoints.</li>
+                    <li>Locates a key HTML block (header-game-prices-content active) to extract price text.</li>
+                    <li>Applies regex parsing to capture labeled prices for "official stores" and "keyshops".</li>
+                    <li>Returns structured price data or "Free" if no values are found.</li>
+                </ul>
+
+                <h2 class="neon-text">Links</h2>
+                <div class="project-links">
+                    <a href="https://pypi.org/project/GetLatestGamePrices/" class="neon-text" target="_blank">Live Demo</a>
+                    <a href="https://github.com/Abhay-Cerberus/GetLatestGamePrices" class="neon-text" target="_blank">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Debris Canvas -->
+    <canvas id="debris"></canvas>
+    
+    <!-- Foggy Glass Layer -->
+    <div class="foggy-glass-layer"></div>
+
+    <!-- Scripts -->
+    <script src="../animejs/anime.min.js"></script>
+    <script src="../js/svg-animations.js"></script>
+</body>
+</html>

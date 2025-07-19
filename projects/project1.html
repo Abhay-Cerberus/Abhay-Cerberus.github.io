@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agent</title>
+    <!-- Critical styles to prevent flash -->
+    <style>
+        html, body {
+            background-color: #000 !important;
+            color: #00fff2;
+            visibility: hidden;
+        }
+        .foggy-glass-layer {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+        }
+        .neon-text {
+            color: #00fff2;
+            text-shadow: 0 0 10px #00cccc;
+        }
+    </style>
+    <!-- Preload CSS files -->
+    <link rel="preload" href="../css/layout.css" as="style">
+    <link rel="preload" href="../css/nav.css" as="style">
+    <link rel="preload" href="../css/bento.css" as="style">
+    <link rel="preload" href="../css/project.css" as="style">
+    <!-- Load CSS files -->
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/bento.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <!-- Make content visible once CSS is loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            document.body.style.visibility = 'visible';
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-brand neon-text">
+            <a href="../index.html" class="neon-text">Home</a>
+        </div>
+    </nav>
+
+    <!-- Project Details -->
+    <section id="project-details" class="glass-panel">
+        <h1 class="neon-text">Travel Agent</h1>
+        
+        <div class="project-content">
+            <div class="project-images">
+                <!-- Add your project images here -->
+                <img src="../assets/AI-Agent.jpg" alt="Project Screenshot 1">
+            </div>
+            
+            <div class="project-info">
+                <h2 class="neon-text">Overview</h2>
+                <p class="neon-text">
+                    An intelligent travel itinerary planner powered by LLMs (via Pydantic-AI), Amadeus APIs, Eventbrite APIs, and OpenStreetMap.
+                </p>
+
+                <h2 class="neon-text">Technologies Used</h2>
+                <div class="project-skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pydantic-AI</span>
+                    <span class="skill-tag">APIs</span>
+                    <span class="skill-tag">OpenStreetMap</span>
+                </div>
+
+                <h2 class="neon-text">Description</h2>
+                <ul class="neon-text">
+                    <li>Validated request schemas using Pydantic-AI for robustness </li>
+                    <li>Integrated Amadeus API to suggest live flight options</li>
+                    <li>Recommended local experiences via Eventbrite API</li>
+                    <li>Queried OpenStreetMap Overpass API for dining and sightseeing</li>
+                    <li>Resolved IATA codes from raw city input automatically</li>
+                    <li>Added error handling and retry logic to ensure reliability</li>
+                </ul>
+
+                <h2 class="neon-text">Links</h2>
+                <div class="project-links">
+                    <a href="https://www.github.com/Abhay-Cerberus/TravelAgent" class="neon-text" target="_blank">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Debris Canvas -->
+    <canvas id="debris"></canvas>
+    
+    <!-- Foggy Glass Layer -->
+    <div class="foggy-glass-layer"></div>
+
+    <!-- Scripts -->
+    <script src="../animejs/anime.min.js"></script>
+    <script src="../js/svg-animations.js"></script>
+</body>
+</html>

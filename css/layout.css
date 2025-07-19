@@ -1,0 +1,164 @@
+:root {
+    --neon-blue: #00fff2;
+    --neon-red: #ff0055;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --foggy-glass: rgba(255, 255, 255, 0.03);
+    --glass-refraction: rgba(0, 255, 242, 0.1);
+}
+
+html {
+    background-color: #000;
+    min-height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: var(--neon-blue);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Layering System */
+#debris {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.foggy-glass-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.02); /* Reduced fogginess */
+    backdrop-filter: blur(5px); /* Reduced blur */
+    z-index: 2;
+    pointer-events: none;
+}
+
+.foggy-glass-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(5px);
+}
+
+section {
+    position: relative;
+    z-index: 3;
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.glass-panel {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/* Glass Refraction Effect */
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        var(--glass-refraction) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transform: scale(1.5);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.glass-panel:hover::before {
+    opacity: 0.5;
+    transform: scale(1);
+}
+
+/* Neon Text Effect */
+.neon-text {
+    color: #00fff2;
+    text-shadow: 0 0 10px #00cccc;
+}
+
+/* Link Hover Effect */
+a.neon-text:hover {
+    text-shadow: 0 0 15px #e60000;
+}
+
+/* Section Headers */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Skills Section Specific */
+.skills-container .bento-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Advanced Glass Reflection */
+.glass-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        125deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0) 60%
+    );
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.glass-panel:hover .glass-reflection {
+    transform: translateY(-100%);
+}
