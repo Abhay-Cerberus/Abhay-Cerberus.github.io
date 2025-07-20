@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Image Generator | Portfolio</title>
+    <title>Game Data Scraping</title>
     <!-- Critical styles to prevent flash -->
     <style>
         html, body {
             background-color: #000 !important;
-            color: #00fff2;
+            color: #00cece;
             visibility: hidden;
         }
         .foggy-glass-layer {
@@ -16,8 +16,8 @@
             backdrop-filter: blur(5px);
         }
         .neon-text {
-            color: #00fff2;
-            text-shadow: 0 0 10px #00cccc;
+            color: #00cece;
+            text-shadow: 0 0 10px #00b4b4;
         }
     </style>
     <!-- Preload CSS files -->
@@ -41,7 +41,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-brand neon-text">
-            <a href="../index.html" class="neon-text">Home</a>
+            <a href="../index.html#projects" class="neon-text">Home</a>
         </div>
     </nav>
 
@@ -52,13 +52,13 @@
         <div class="project-content">
             <div class="project-images">
                 <!-- Add your project images here -->
-                <img src="../assets/GameDataFetcher.jpeg" alt="Project Screenshot 5">
+                <img src="../assets/Project/Steam-Dataset.jpeg" alt="Project Screenshot 1">
             </div>
             
             <div class="project-info">
                 <h2 class="neon-text">Overview</h2>
                 <p class="neon-text">
-                    A script that scrapes the current game prices from gg.deals by converting game names into URL-compatible formats and extracting price data from official stores and keyshops.
+                    A modular scraping tool for Steam game insights, enriching raw data with metrics and storing outputs in reusable formats.
                 </p>
 
                 <h2 class="neon-text">Technologies Used</h2>
@@ -66,22 +66,22 @@
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">Requests</span>
                     <span class="skill-tag">BeautifulSoup</span>
-                    <span class="skill-tag">RegEx</span>
+                    <span class="skill-tag">APIs</span>
                 </div>
 
                 <h2 class="neon-text">Description</h2>
                 <ul class="neon-text">
-                    <li>Uses requests and BeautifulSoup to fetch and parse HTML from a game's gg.deals page.</li>
-                    <li>Transforms game titles (e.g., replacing spaces, colons, and periods) for valid URL endpoints.</li>
-                    <li>Locates a key HTML block (header-game-prices-content active) to extract price text.</li>
-                    <li>Applies regex parsing to capture labeled prices for "official stores" and "keyshops".</li>
-                    <li>Returns structured price data or "Free" if no values are found.</li>
+                    <li>Scraped game data using Requests and BeautifulSoup</li>
+                    <li>Enriched datasets with analytics via Gamalytics API</li>
+                    <li>Stored results in CSV and JSON formats</li>
+                    <li>Implemented deduplication and managed rate limits</li>
+                    <li>Packaged as a developer-friendly module with documentation</li>
                 </ul>
 
                 <h2 class="neon-text">Links</h2>
                 <div class="project-links">
-                    <a href="https://pypi.org/project/GetLatestGamePrices/" class="neon-text" target="_blank">Live Demo</a>
-                    <a href="https://github.com/Abhay-Cerberus/GetLatestGamePrices" class="neon-text" target="_blank">GitHub Repository</a>
+                    <a href="https://www.kaggle.com/datasets/mistercerberus/steam-games-dataset" class="neon-text" target="_blank">Kaggle Dataset</a>
+                    <a href="https://github.com/Abhay-Cerberus/SteamGameDataScraping" class="neon-text" target="_blank">GitHub Repository</a>
                 </div>
             </div>
         </div>

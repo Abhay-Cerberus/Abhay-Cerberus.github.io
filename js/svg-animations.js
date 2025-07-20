@@ -16,7 +16,7 @@ document.body.insertBefore(svg, document.body.firstChild);
 // Generate random path data
 function generatePath() {
     const points = [];
-    const numPoints = Math.floor(Math.random() * 4) + 3; // 3-6 points for more variety
+    const numPoints = Math.floor(Math.random() * 4) + 6; // 3-6 points for more variety
     const size = Math.random() * 60 + 10; // Increased size range from 10-70
     
     for (let i = 0; i < numPoints; i++) {
@@ -51,10 +51,10 @@ function createDebris() {
     return debris;
 }
 
-// Animation settings
-const debrisCount = 75; // Reduced from 150
-const minAnimationDuration = 6000; // Doubled from 3000
-const maxAnimationDuration = 16000; // Doubled from 8000
+// Animation settings - Further optimized for performance
+const debrisCount = 15; // Further reduced for better performance
+const minAnimationDuration = 30000; // Longer duration for smoother performance
+const maxAnimationDuration = 40000; // Longer duration for smoother performance
 
 // Create and animate debris
 function animateDebris() {
@@ -97,6 +97,7 @@ for (let i = 0; i < debrisCount; i++) {
         animateDebris();
     }, Math.random() * 2000); // Stagger initial creation
 }
+
 
 // Initialize animation
 let debrisElements = initDebris();

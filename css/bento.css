@@ -1,147 +1,141 @@
-/* Floating Animation Keyframes */
+/* Minimal Floating Animation Keyframes */
 @keyframes float-1 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(5px, -5px) rotate(1deg); }
-    50% { transform: translate(0, -8px) rotate(0deg); }
-    75% { transform: translate(-5px, -3px) rotate(-1deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, -1px) rotate(0deg);
+  }
 }
 
 @keyframes float-2 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(-4px, -6px) rotate(-1deg); }
-    50% { transform: translate(0, -10px) rotate(0deg); }
-    75% { transform: translate(4px, -4px) rotate(1deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, -1px) rotate(0deg);
+  }
 }
 
 @keyframes float-3 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(6px, -4px) rotate(1.5deg); }
-    50% { transform: translate(0, -7px) rotate(0deg); }
-    75% { transform: translate(-6px, -5px) rotate(-1.5deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, -1px) rotate(0deg);
+  }
 }
 
 .bento-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    animation: float-1 6s ease-in-out infinite;
-    transform-origin: center center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(3px); /* Reduced blur for Edge/Firefox performance */
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: float-1 30s ease-in-out infinite; /* Slower animation for better performance */
+  transform-origin: center center;
+  will-change: transform; /* Performance hint */
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
-/* Apply different animations to every third card */
+/* Fallback for browsers with poor backdrop-filter support */
+@supports not (backdrop-filter: blur(1px)) {
+  .bento-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: none;
+  }
+}
+
+/* Apply different animations to every third card - Slower for better performance */
 .bento-card:nth-child(3n-1) {
-    animation: float-2 7s ease-in-out infinite;
+  animation: float-2 35s ease-in-out infinite;
 }
 
 .bento-card:nth-child(3n) {
-    animation: float-3 8s ease-in-out infinite;
+  animation: float-3 40s ease-in-out infinite;
 }
 
 .bento-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid var(--neon-blue);
-    border-radius: 8px;
-    opacity: 0;
-    transition: all 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .bento-card:hover {
-    box-shadow: 
-        0 0 5px var(--neon-red),
-        0 0 15px var(--neon-red),
-        0 0 30px var(--neon-red);
-    animation-play-state: paused;
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+  box-shadow: 0 0 3px var(--neon-red), 0 0 8px var(--neon-red),
+    0 0 15px var(--neon-red);
+  animation-play-state: paused;
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
 
 .bento-card:hover::before {
-    opacity: 1;
-    border-color: var(--neon-red);
-    box-shadow: 
-        0 0 5px var(--neon-red),
-        0 0 10px var(--neon-red),
-        0 0 20px var(--neon-red);
+  opacity: 1;
+  border-color: var(--neon-red);
+  box-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red),
+    0 0 20px var(--neon-red);
 }
 
 /* Skill Card Specific */
 .skill-card {
-    text-align: center;
+  text-align: center;
+  cursor: default; /* Remove pointer cursor since skill cards aren't clickable */
 }
 
 .skill-name {
-    margin-bottom: 1rem;
-}
-
-.proficiency-meter {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.proficiency-fill {
-    height: 100%;
-    background: #00fff2;
-    box-shadow: 0 0 10px #00fff2;
-    width: 0;
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .proficiency-fill {
-    background: var(--neon-red);
-    box-shadow: 0 0 10px var(--neon-red);
+  margin-bottom: 1rem;
 }
 
 /* Project Card Specific */
 .project-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skill-tag {
-    padding: 0.25rem 0.5rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    background: rgba(0, 255, 242, 0.1);
-    border: 1px solid var(--neon-blue);
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  background: rgba(0, 255, 242, 0.1);
+  border: 1px solid var(--neon-blue);
 }
 
 /* Certificate Card Specific */
 .cert-card {
-    display: grid;
-    gap: 1rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .cert-thumbnail {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid var(--glass-border);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--glass-border);
 }
 
 .cert-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

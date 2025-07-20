@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog AI Automation</title>
+    <title>Kalyan ML</title>
     <!-- Critical styles to prevent flash -->
     <style>
         html, body {
             background-color: #000 !important;
-            color: #00fff2;
+            color: #00cece;
             visibility: hidden;
         }
         .foggy-glass-layer {
@@ -16,8 +16,8 @@
             backdrop-filter: blur(5px);
         }
         .neon-text {
-            color: #00fff2;
-            text-shadow: 0 0 10px #00cccc;
+            color: #00cece;
+            text-shadow: 0 0 10px #00b4b4;
         }
     </style>
     <!-- Preload CSS files -->
@@ -41,46 +41,49 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-brand neon-text">
-            <a href="../index.html" class="neon-text">Home</a>
+            <a href="../index.html#projects" class="neon-text">Home</a>
         </div>
     </nav>
 
     <!-- Project Details -->
-    <section id="project-details" class="glass-panel foggy-glass-section">
-        <h1 class="neon-text">Automated AI Blog Generator</h1>
+    <section id="project-details" class="glass-panel">
+        <h1 class="neon-text">Kalyan ML</h1>
         
         <div class="project-content">
             <div class="project-images">
                 <!-- Add your project images here -->
-                <img src="../assets/AI-Automation.jpeg" alt="Project Screenshot 1">
+                <img src="../assets/Project/KML.jpeg" alt="Project Screenshot 4">
             </div>
             
             <div class="project-info">
                 <h2 class="neon-text">Overview</h2>
                 <p class="neon-text">
-
+                    Predicting mood from a 1,000-record synthetic wellness dataset using Python and a Random Forest model.
                 </p>
 
                 <h2 class="neon-text">Technologies Used</h2>
                 <div class="project-skills">
-                    <span class="skill-tag">Make.com</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">APIs</span>
-                    <span class="skill-tag">AI integration</span>                
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
                 </div>
 
                 <h2 class="neon-text">Description</h2>
                 <ul class="neon-text">
-                    <li>Scheduled RSS feed ingestion to collect trending articles</li>
-                    <li>Used Gemini LLM to write human-like titles and body text</li>
-                    <li>Published directly to Blogger with formatted tags and layout</li>
-                    <li>Monitored workflow health; set up failure notifications</li>
+                    <li>Generated a synthetic dataset of 1,000 records covering steps, sleep, mood, diet, stress, screen time, and social hours.
+                    <li>Visualized key relationships with a social hours vs. mood scatterplot.</li>
+                    <li>Explored feature interdependencies using a correlation heatmap.</li>
+                    <li>Trained a Random Forest regressor yielding RMSE 0.33 and R² 0.78 on mood prediction.</li>
+                    <li>Highlighted social hours and sleep duration as top mood drivers via feature importance.</li>
                 </ul>
 
                 <h2 class="neon-text">Links</h2>
                 <div class="project-links">
-                    <a href="https://www.tumblr.com/dailypcgamingnews" class="neon-text" target="_blank">Live Demo</a>
-                    <a href="https://github.com/Abhay-Cerberus/Blog-Automation" class="neon-text" target="_blank">GitHub Repository</a>
+                    <a href="#" class="neon-text" target="_blank">Live Demo</a>
+                    <a href="#" class="neon-text" target="_blank">GitHub Repository</a>
                 </div>
             </div>
         </div>
@@ -88,6 +91,9 @@
 
     <!-- Debris Canvas -->
     <canvas id="debris"></canvas>
+    
+    <!-- Foggy Glass Layer -->
+    <div class="foggy-glass-layer"></div>
 
     <!-- Scripts -->
     <script src="../animejs/anime.min.js"></script>

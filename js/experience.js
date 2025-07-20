@@ -50,13 +50,13 @@ function initializeExperience() {
         const card = createExperienceCard(exp);
         container.appendChild(card);
         
-        // Add hover animation using anime.js
+        // Add minimal hover animation using anime.js
         card.addEventListener('mouseenter', () => {
             anime({
                 targets: card,
-                scale: 1.05,
-                duration: 300,
-                easing: 'easeOutElastic(1, .8)'
+                scale: 1.01,
+                duration: 200,
+                easing: 'easeOutQuad'
             });
         });
         
@@ -64,8 +64,8 @@ function initializeExperience() {
             anime({
                 targets: card,
                 scale: 1,
-                duration: 300,
-                easing: 'easeOutElastic(1, .8)'
+                duration: 200,
+                easing: 'easeOutQuad'
             });
         });
     });

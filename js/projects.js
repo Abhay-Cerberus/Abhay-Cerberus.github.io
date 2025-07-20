@@ -5,42 +5,42 @@ const projectsData = [
         description: 'An intelligent travel itinerary planner powered by LLMs (via Pydantic-AI), Amadeus APIs, Eventbrite APIs, and OpenStreetMap.',
         thumbnail: 'assets/AI-Agent.jpg',
         skills: ['Python', 'Pydantic-AI', 'APIs', 'OpenStreetMap'],
-        link: 'projects/project1.html'
+        link: 'projects/TravelAgent.html'
     },
     {
         title: 'Steam Game Data Scraping',
         description: 'Data Scraping project that collects and stores game data from Steam using Beautiful Soup and Pandas.',
         thumbnail: 'assets/Data-scraping.png',
         skills: ['Python', 'Beautiful Soup', 'Pandas', 'Requests'],
-        link: 'projects/project2.html'
+        link: 'projects/GameDataScraper.html'
     },
     {
         title: 'Automated AI Blog Generator',
         description: 'Gaming news automation using make.com',
         thumbnail: 'assets/AI-Automation.png',
         skills: ['Make.com', 'APIs', 'Prompt Engineering'],
-        link: 'projects/project3.html'
+        link: 'projects/BlogAIAutomation.html'
     },
     {
         title: 'Kalyan ML (KML)',
         description: 'Machine Learning Model Trained on Synthetic Data',
         thumbnail: 'assets/AI-Automation.png',
         skills: ['Python', 'NumPy', 'Scikit-Learn', 'Pandas', 'Matplotlib', 'Seaborn'],
-        link: 'projects/project4.html'
+        link: 'projects/KalyanML.html'
     },
     {
         title: 'Get Latest Game Prices',
         description: 'Data Scraper for getting latest game prices from gg.deals',
         thumbnail: 'assets/AI-Automation.png',
         skills: ['Python', 'Beautiful Soup', 'Requests'],
-        link: 'projects/project5.html'
+        link: 'projects/GetLatestGamePrices.html'
     },
     {
         title: 'Notes Keeper',
         description: 'Extension for making notes and saving them in a text file automatically',
         thumbnail: 'assets/AI-Automation.png',
         skills: ['HTML', 'CSS', 'JavaScript'],
-        link: 'projects/project6.html'
+        link: 'projects/NotesKeeper.html'
     }
 ];
 

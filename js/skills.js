@@ -1,38 +1,35 @@
-// Skills data
+// Skills data - Simplified without proficiency levels
 const skillsData = {
     languages: [
-        { name: 'Python', proficiency: 4 },
-        { name: 'Java', proficiency: 3 },
-        { name: 'C', proficiency: 2.5 },
-        { name: 'HTML/CSS', proficiency: 2 }
+        { name: 'Python' },
+        { name: 'Java' },
+        { name: 'C' },
+        { name: 'HTML/CSS' }
     ],
     frameworks: [
-        { name: 'NumPy', proficiency: 4 },
-        { name: 'Pandas', proficiency: 4 },
-        { name: 'Scikit-Learn', proficiency: 3.5 },
-        { name: 'Pydantic-AI', proficiency: 3.5 },
-        { name: 'Beautiful Soup', proficiency: 3.5 },
-        { name: 'PyTorch', proficiency: 3 }
+        { name: 'NumPy' },
+        { name: 'Pandas' },
+        { name: 'Scikit-Learn' },
+        { name: 'Pydantic-AI' },
+        { name: 'Beautiful Soup' },
+        { name: 'PyTorch' }
     ],
     tools: [
-        { name: 'Git', proficiency: 4 },
-        { name: 'Github', proficiency: 4.5 },
-        { name: 'n8n', proficiency: 4 },
-        { name: 'make.com', proficiency: 4 },
-        { name: 'Github Actions', proficiency: 4 }
+        { name: 'Git' },
+        { name: 'Github' },
+        { name: 'n8n' },
+        { name: 'make.com' },
+        { name: 'Github Actions' }
     ]
 };
 
-// Create skill card
+// Create skill card - Simplified without skill bars
 function createSkillCard(skill) {
     const card = document.createElement('div');
     card.className = 'bento-card skill-card';
     
     card.innerHTML = `
         <h4 class="skill-name neon-text">${skill.name}</h4>
-        <div class="proficiency-meter">
-            <div class="proficiency-fill" style="width: 0%"></div>
-        </div>
     `;
     
     return card;
@@ -55,12 +52,6 @@ function initializeSkills() {
         skills.forEach(skill => {
             const card = createSkillCard(skill);
             container.appendChild(card);
-            
-            // Animate proficiency meter after a delay
-            setTimeout(() => {
-                const fill = card.querySelector('.proficiency-fill');
-                fill.style.width = `${(skill.proficiency / 5) * 100}%`;
-            }, 300);
         });
     });
 }
